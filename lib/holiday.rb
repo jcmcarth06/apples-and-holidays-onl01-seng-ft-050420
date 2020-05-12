@@ -55,13 +55,13 @@ def all_supplies_in_holidays(holiday_hash)
       holiday_strings_array = holiday.to.s.split("_")
       holiday_name = []
         holiday_strings_array.each do |holiday|
-          holiday_names << holiday.capitalize
+          holiday_names << holiday.capitalize!
         end
         holiday = holiday_name.join(" ")
 
         supples = supplies.join(", ")
         puts "#{holiday}: #{supplies}"
-
+end
   end
 end
 
