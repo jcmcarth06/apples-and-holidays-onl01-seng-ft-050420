@@ -49,16 +49,20 @@ holiday_hash[:winter].values.flatten
 end
 
 def all_supplies_in_holidays(holiday_hash)
-  # iterate through holiday_hash and print items such that your readout resembles:
-  # Winter:
-  #   Christmas: Lights, Wreath
-  #   New Years: Party Hats
-  # Summer:
-  #   Fourth Of July: Fireworks, BBQ
-  # etc.
-holiday_hash[:holiday
-]
+  holiday_hash.each do |season, data|
+    puts season "#{season_to_capitalize}"
+    season.each do |holiday, supplies|
+      holiday_strings_array = holiday.to.s.split("_")
+      holiday_name = []
+        holiday_strings_array.each do |holiday|
+          holiday_names << holiday.capitalize
+        end
+        holiday = holiday_name.join(" ")
 
+        supples = supplies.join(", ")
+        puts "#{holiday}: #{supplies}"
+        
+  end
 end
 
 def all_holidays_with_bbq(holiday_hash)
